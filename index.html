@@ -1,16 +1,44 @@
+<!DOCTYPE html>
 <html>
     <head>
+        <title>Simple Interest Calculator</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
+        <div class="maindiv">
+            <h1>Simple Interest Calculator</h1>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+            <!-- The amount of money input -->
+            Amount <input type="number"  id="principal">  <br/>
 
-        <button onclick="compute()">Compute</button>
+            <!-- The interest rate range input, with a onchange function to update the span HTML next to it -->
+            Rate <input type="range"  onchange="updateRate()" id="rate" min=1 max=20 step = 0.25 value=10.25><span id="rate_val">10.25%</span>  <br/>
+
+            <!-- The dropdown input to choose up to which year you want to calculte the interest -->
+            No. of Years <select id="years">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="3">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>  <br/>
+
+            <!-- Span to display the result -->
+            Interest : <span id="result"></span><br>
+
+            <!-- Button to start the compute function to calculate the interest and update the page with the results -->
+            <button onclick="compute()">Compute Interest</button> 
+            <span id="result">
+            </span>
+            <footer>
+                This Calculator belongs to Pierre RIFF.
+            </footer>
+        </div>
     </body>
 </html>
